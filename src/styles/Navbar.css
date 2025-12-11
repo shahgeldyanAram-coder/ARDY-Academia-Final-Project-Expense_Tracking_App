@@ -1,0 +1,25 @@
+.nav-container {
+    position: absolute;
+    top: 8%;
+    left: 27%;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+
+}
+
+
+.line-under-text {
+    border-bottom: 2px solid #ed7a07;
+    width: 250px;
+
+}
+
+.line-under-text p {
+    cursor: pointer;
+    margin: 0%;
+}

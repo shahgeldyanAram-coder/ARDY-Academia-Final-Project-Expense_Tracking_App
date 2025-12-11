@@ -1,0 +1,47 @@
+.container {
+    max-width: 900px;
+    padding: 20px;
+    margin: auto;
+}
+
+
+.Expense-Tracker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0 15px 0 20px;
+    margin: 70px 70px 0 70px;
+
+}
+
+.title {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+
+.add-btn {
+    background: #fff;
+    color: #2c73d2;
+    width: 100px;
+    font-size: 1.3em;
+    border: 2px solid #2c73d2;
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #0063d3;
+    color: #fff;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.1em;
+    color: red;
+    margin: 20px 80px 30px 0;
+}
