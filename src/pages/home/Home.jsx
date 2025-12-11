@@ -55,6 +55,7 @@ export const Home = () => {
     };
 
     const confirmDelete = (id) => setDeleteId(id);
+
     const handleConfirmDelete = () => {
         setItems(prev => prev.filter(item => item.id !== deleteId));
         setDeleteId(null);
@@ -62,6 +63,10 @@ export const Home = () => {
     const handleCancelDelete = () => setDeleteId(null);
 
     const total = items.reduce((s, i) => s + i.price, 0);
+
+
+
+
 
     return (
         <div className="container">
