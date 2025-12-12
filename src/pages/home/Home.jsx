@@ -4,11 +4,11 @@ import { ExpenseList } from "../../components/Expense/ExpenseList.jsx";
 import { useLocalStorage } from "../../components/hooks/useLocalStorage.js";
 import { DeleteModal } from "../../components/Expense/DeleteModel.jsx";
 import "../../styles/Home.css";
-
 export const Home = () => {
     const [items, setItems] = useLocalStorage("expenses", []);
     const [showModal, setShowModal] = useState(false);
     const [deleteId, setDeleteId] = useState(null);
+
     const [errors, setErrors] = useState({});
 
     const [form, setForm] = useState({
@@ -17,25 +17,43 @@ export const Home = () => {
         description: "",
     });
 
-    const resetForm = () =>
-        setForm({ title: "", price: "", description: "" });
+    const resetForm = () => {
+        setForm({
+            title: "",
+            price: "",
+            description: "",
+        });
+    };
 
     const handleChange = (field, value) => {
-        setForm(prev => ({ ...prev, [field]: value }));
+        setForm((oldForm) => {
+            return {
+                ...oldForm,
+                [field]: value,
+            };
+        });
 
         if (errors[field]) {
-            setErrors(prev => {
-                const newErrors = { ...prev };
-                delete newErrors[field];
-                return newErrors;
-            });
+            const newErrors = { ...errors };
+            delete newErrors[field];
+            setErrors(newErrors);
         }
     };
+
     const handleAdd = () => {
         const newErrors = {};
-        if (!form.title) newErrors.title = "Expense title not entered";
-        if (!form.price) newErrors.price = "Expense price not entered";
-        if (!form.description) newErrors.description = "Description not entered";
+
+        if (form.title === "") {
+            newErrors.title = "Expense title not entered";
+        }
+
+        if (form.price === "") {
+            newErrors.price = "Expense price not entered";
+        }
+
+        if (form.description === "") {
+            newErrors.description = "Description not entered";
+        }
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
@@ -44,28 +62,39 @@ export const Home = () => {
 
         const newItem = {
             id: Date.now(),
-            ...form,
+            title: form.title,
             price: Number(form.price),
+            description: form.description,
         };
 
-        setItems(prev => [...prev, newItem]);
+        setItems((oldItems) => {
+            return [...oldItems, newItem];
+        });
+
         resetForm();
         setShowModal(false);
         setErrors({});
     };
 
-    const confirmDelete = (id) => setDeleteId(id);
+    const confirmDelete = (id) => {
+        setDeleteId(id);
+    };
 
     const handleConfirmDelete = () => {
-        setItems(prev => prev.filter(item => item.id !== deleteId));
+        setItems((oldItems) => {
+            return oldItems.filter((item) => item.id !== deleteId);
+        });
+
         setDeleteId(null);
     };
-    const handleCancelDelete = () => setDeleteId(null);
 
-    const total = items.reduce((s, i) => s + i.price, 0);
+    const handleCancelDelete = () => {
+        setDeleteId(null);
+    };
 
-
-
+    const total = items.reduce((sum, item) => {
+        return sum + item.price;
+    }, 0);
 
 
     return (
