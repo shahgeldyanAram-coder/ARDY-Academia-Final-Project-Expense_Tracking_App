@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { AddModal } from "../../components/Expense/AddModal.jsx";
+import { Addform } from "../../components/Expense/Addform.jsx";
 import { ExpenseList } from "../../components/Expense/ExpenseList.jsx";
 import { useLocalStorage } from "../../components/hooks/useLocalStorage.js";
-import { DeleteModal } from "../../components/Expense/DeleteModel.jsx";
+import { Deleteform } from "../../components/Expense/Deleteform.jsx";
 import "../../styles/Home.css";
+
 export const Home = () => {
     const [items, setItems] = useLocalStorage("expenses", []);
     const [showModal, setShowModal] = useState(false);
@@ -109,7 +110,7 @@ export const Home = () => {
             <div className="total">Total: {total} AMD</div>
 
             {showModal && (
-                <AddModal
+                <Addform
                     form={form}
                     errors={errors}
                     handleChange={handleChange}
@@ -123,7 +124,7 @@ export const Home = () => {
             </div>
 
             {deleteId !== null && (
-                <DeleteModal
+                <Deleteform
                     onConfirm={handleConfirmDelete}
                     onCancel={handleCancelDelete}
                 />

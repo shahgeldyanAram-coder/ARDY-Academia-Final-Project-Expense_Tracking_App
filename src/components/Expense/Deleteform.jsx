@@ -1,6 +1,6 @@
 import '../../styles/DeleteModel.css';
 
-export const DeleteModal = ({ onConfirm, onCancel }) => {
+export const Deleteform = ({ onConfirm, onCancel }) => {
     return (
         <div className="delete-modal">
             <div className="delete-box">

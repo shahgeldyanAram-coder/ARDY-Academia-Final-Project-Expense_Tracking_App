@@ -1,6 +1,6 @@
 import "../../styles/Modal.css";
 
-export const AddModal = ({ form, handleChange, onAdd, errors, onClose }) => {
+export const Addform = ({ form, handleChange, onAdd, errors, onClose }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-box">
