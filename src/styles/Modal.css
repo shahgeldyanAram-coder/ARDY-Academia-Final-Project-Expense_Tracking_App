@@ -1,3 +1,4 @@
+/* Modal overlay for centering */
 .modal-overlay {
     display: flex;
     position: fixed;
@@ -9,7 +10,7 @@
     justify-content: center;
 }
 
-
+/* Modal container */
 .modal-box {
     width: 450px;
     background: white;
@@ -18,69 +19,49 @@
     border: 2px solid black;
 }
 
-
+/* Modal title */
 .modal-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-
+/* Text input fields */
 .input {
     padding: 12px;
     border: 2px solid #000;
     border-radius: 12px;
     width: 90%;
-
 }
 
-
-
+/* Textarea fields */
 .textarea {
     width: 91%;
     padding: 10px;
     border: 2px solid #000;
     border-radius: 15px;
-}
-
-
-.textarea {
     height: 50px;
     resize: none;
 }
 
-
+/* Modal action buttons container */
 .modal-buttons {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
 }
 
-
+/* Cancel button */
 .cancel-btn {
-    border-radius: 10px;
-    border: 2px solid #000;
-    background: white;
-    cursor: pointer;
-}
-
-.modal-add-btn,
-.cancel-btn {
-    align-items: center;
-    width: 100px;
-    padding: 10px 0 10px 0;
-    margin: 10px 0 0 0;
-}
-
-.cancel-btn {
-    border: 2px solid #000;
-    color: #000;
-    background: none;
     border-radius: 8px;
+    border: 2px solid #000;
+    background: none;
+    color: #000;
     cursor: pointer;
     font-weight: 400;
 }
 
+/* Add button */
 .modal-add-btn {
     background: #fff;
     color: #2c73d2;
@@ -89,6 +70,16 @@
     cursor: pointer;
 }
 
+/* Common button sizing */
+.modal-add-btn,
+.cancel-btn {
+    align-items: center;
+    width: 100px;
+    padding: 10px 0;
+    margin: 10px 0 0 0;
+}
+
+/* Hover states */
 .cancel-btn:hover {
     background: #000;
     color: #fff;
@@ -99,11 +90,13 @@
     color: #fff;
 }
 
+/* Form element spacing */
 .Expense-modal-element {
     margin-bottom: 30px;
 }
 
+/* Validation error messages */
 .error {
-    margin: 0px 0px 0px 10px;
+    margin: 0 0 0 10px;
     color: red;
 }

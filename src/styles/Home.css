@@ -1,10 +1,11 @@
+/* Main container */
 .container {
     max-width: 900px;
     padding: 20px;
     margin: auto;
 }
 
-
+/* Expense tracker header section */
 .Expense-Tracker {
     display: flex;
     align-items: center;
@@ -13,15 +14,15 @@
     border-radius: 20px;
     padding: 0 15px 0 20px;
     margin: 70px 70px 0 70px;
-
 }
 
+/* Tracker title */
 .title {
     font-weight: 400;
     font-size: 25px;
 }
 
-
+/* Add button styling */
 .add-btn {
     background: #fff;
     color: #2c73d2;
@@ -33,11 +34,13 @@
     cursor: pointer;
 }
 
+/* Add button hover state */
 .add-btn:hover {
     background: #0063d3;
     color: #fff;
 }
 
+/* Total expenses display */
 .total {
     display: flex;
     justify-content: flex-end;

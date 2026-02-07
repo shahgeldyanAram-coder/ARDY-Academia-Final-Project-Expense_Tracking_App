@@ -1,3 +1,4 @@
+/* Expense list container */
 .Expense-list {
     display: flex;
     justify-content: center;
@@ -5,6 +6,7 @@
     margin: auto;
 }
 
+/* List header row */
 .list-header {
     display: flex;
     gap: 130px;
@@ -14,6 +16,7 @@
     width: 700px;
 }
 
+/* Divider under titles */
 .titles-hr {
     border: none;
     height: 1px;
@@ -22,15 +25,18 @@
     margin: auto;
 }
 
+/* Generic span styling */
 .span {
     font-weight: 400;
 }
 
+/* Header title specific styling */
 .header-iteams-title {
     margin: 0 110px 0 0;
     font-weight: 400;
 }
 
+/* Individual expense item container */
 .item-box {
     display: flex;
     justify-content: space-between;
@@ -41,11 +47,12 @@
     margin: 10px 0;
 }
 
+/* Expense item title spacing */
 .list-iteam-title {
     margin: 0 80px 0 0;
 }
 
-
+/* Delete button */
 .delete-btn {
     font-size: 1em;
     font-weight: 400;
@@ -55,6 +62,7 @@
     cursor: pointer;
 }
 
+/* Alternative expense item styling */
 .expense-item {
     border: 1px solid #ddd;
     padding: 12px;
@@ -66,11 +74,13 @@
     align-items: center;
 }
 
+/* Expense title */
 .expense-title {
     font-size: 16px;
     font-weight: bold;
 }
 
+/* Expense amount */
 .expense-amount {
     font-size: 16px;
     color: #007bff;
