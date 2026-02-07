@@ -19,7 +19,14 @@
 
 }
 
-.line-under-text p {
-    cursor: pointer;
+.line-under-text .link {
+    text-decoration: none;
     margin: 0%;
+    color: black;
+}
+
+.line-under-text .link:hover {
+    text-decoration: none;
+    margin: 0%;
+    color: #ff8000;
 }
